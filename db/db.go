@@ -8,7 +8,12 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-const DbClientKey = "database"
+const (
+	DbClientKey         = "database"
+	DbMainDatabase      = "main"
+	DbAuthorsCollection = "authors"
+	DbOperationTimeout  = time.Second * 5
+)
 
 func CreateNewClient(ctx context.Context) (*mongo.Client, error) {
 	timeSelectionTimeout := time.Second * 5

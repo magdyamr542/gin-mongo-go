@@ -1,4 +1,4 @@
-module github.com/magdyamr542/mux-mongo-go
+module github.com/magdyamr542/gin-mongo-go
 
 go 1.19
 
