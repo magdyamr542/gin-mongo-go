@@ -37,3 +37,15 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: user
       ME_CONFIG_MONGODB_ADMINPASSWORD: password
       ME_CONFIG_MONGODB_URL: mongodb://user:password@db:27017/
+
+  prometheus:
+    image: prom/prometheus:v2.41.0
+    container_name: prometheus
+    restart: always
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/data:/prometheus
+    ports:
+      - 9090:9090
+    depends_on:
+      - backend

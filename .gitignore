@@ -1,2 +1,3 @@
 .mongo_db
 .air_tmp
+prometheus/data

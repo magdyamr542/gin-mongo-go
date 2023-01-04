@@ -10,7 +10,7 @@ import (
 	"github.com/magdyamr542/gin-mongo-go/models"
 )
 
-func AddAuthor(apiContext ApiContext) func(*gin.Context) {
+func AddAuthor(apiContext ApiContext) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		authorsCollection := apiContext.Collection
 		logger := apiContext.Logger

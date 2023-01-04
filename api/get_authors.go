@@ -10,7 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 )
 
-func GetAuthors(apiContext ApiContext) func(*gin.Context) {
+func GetAuthors(apiContext ApiContext) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		authorsCollection := apiContext.Collection
 		logger := apiContext.Logger

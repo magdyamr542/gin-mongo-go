@@ -10,7 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-func AddAuthorBook(apiContext ApiContext) func(*gin.Context) {
+func AddAuthorBook(apiContext ApiContext) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		logger := apiContext.Logger
 		authorsCollection := apiContext.Collection
