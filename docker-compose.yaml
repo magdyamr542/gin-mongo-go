@@ -17,7 +17,6 @@ services:
   db:
     image: mongo:4.2.23-bionic
     container_name: db
-    restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: user
       MONGO_INITDB_ROOT_PASSWORD: password
@@ -27,7 +26,6 @@ services:
   mongo-express:
     image: mongo-express:0.54.0
     container_name: db-ui
-    restart: always
     ports:
       - 8081:8081
     depends_on:
@@ -41,7 +39,6 @@ services:
   prometheus:
     image: prom/prometheus:v2.41.0
     container_name: prometheus
-    restart: always
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/data:/prometheus
